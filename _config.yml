@@ -82,13 +82,22 @@ deploy:
   branch: master
 
 # Excerpt
+##
 auto_excerpt:
   enable: true
   length: 150
 
 # Search
+##
 search:
   path: search.xml
   field: post
   format: html
   limit: 10000
+
+# Security
+##
+encrypt:
+    enable: true
+    default_abstract: 这是篇受保护的文章！
+    default_message: 请输入文章密码！
