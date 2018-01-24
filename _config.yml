@@ -81,3 +81,14 @@ deploy:
   repository: https://github.com/zhanzongyuan/zhanzongyuan.github.io.git
   branch: master
 
+# Excerpt
+auto_excerpt:
+  enable: true
+  length: 150
+
+# Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
