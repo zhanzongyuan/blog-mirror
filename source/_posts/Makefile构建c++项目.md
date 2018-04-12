@@ -1,5 +1,5 @@
 ---
-title: Makefile构建c++项目
+dtitle: Makefile构建c++项目
 date: 2018-04-10 18:21:43
 tags:
     - makefile
@@ -9,8 +9,6 @@ categories:
     - 计算机科学
 description: 重新写makefile，重新了解g++的编译链接过程
 ---
-
-# Makefile构建c++项目
 
 > 做计算机视觉作业时，要用到CImg库，发现居然Xcode不能链接到CImg头文件里面引用的X11链接库，于是在网上找了各种方法。最终重新捡起Makefile搭建c++项目。
 

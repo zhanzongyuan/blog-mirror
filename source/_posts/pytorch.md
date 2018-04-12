@@ -1,18 +1,15 @@
 ---
 title: Pytorch学习笔记
 tags:
-  - pytorch
-  - CNN
+	- pytorch
+	- CNN
+	- 深度学习
 categories:
   - 计算机科学
 description: pytorch是专门为神经网络而生的一种框架，支持调用GPU
 date: 2018-04-11 13:18:04
 mathjax: true
 ---
-
-
-
-# Pytorch学习笔记
 
 ## 1. 基本数据类型
 
@@ -27,7 +24,7 @@ mathjax: true
 
 
 
-## 2. 梯度库
+## 2. 梯度模块
 
 1. **autograd**
 
@@ -60,7 +57,7 @@ mathjax: true
 
 
 
-## 3. 网络搭建库
+## 3. 神经网络搭建库
 
 >  torch.nn库是用于pytorch网络的搭建
 
@@ -140,5 +137,23 @@ net = Net()
 print(net)
 ```
 
+
+
+## 4. 分类器实战
+
+- torchvision.transforms：该模块提供多个转换器
+  - transforms.Compose：将多个转换器串联起来
+  - transforms.ToTensor：Convert a `PIL Image` or `numpy.ndarray` to tensor.
+  - transforms.Normalize：(*mean, std*)，归一化图像三个维度（C，W，H）
+- torchvision.datasets
+  - torchvision.datasets.CIFAR10：下载数据集
+  - torch.utils.data.DataLoader：加载数据集
+- torch.nn.CrossEntropyLoss
+  - 教程商误差？
+
+
+
+
 —未完待续—
+
 
