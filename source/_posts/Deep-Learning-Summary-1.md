@@ -204,9 +204,7 @@ AlexNet中提出，效果得到优化
 
 ### Pytorch
 
-未实践
-
-——未完待续
+👉http://blog.zhanzy.xyz/2018/04/11/pytorch/
 
 
 

@@ -1,5 +1,5 @@
 ---
-dtitle: Makefile构建c++项目
+title: Makefile构建c++项目
 date: 2018-04-10 18:21:43
 tags:
     - makefile
