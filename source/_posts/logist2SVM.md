@@ -31,17 +31,16 @@ description: 逻辑回归和SVM的cost函数设计思想几乎是一致的
 ### 1.2 损失函数
 
 为了衡量模型的好坏我们需要提出一个**准则**，即loss模型对样本预测结果的**损失函数**
-$$
-对某个样本(x_i, y_i)预测结果的效果判断 \\
-L(\theta) = \begin{cases}
-- log\ h_{\theta}(x_i) & \quad \text{if } y_i = 1\\
-- log\ (1- h_{\theta}(x_i)) & \quad \text{if } y_i = 0
-\end{cases}
-$$
+
+对某个样本(x_i, y_i)预测结果的效果判断 :
+
+$$ \\ L(\theta) = \begin{cases} - log\ h_{\theta}(x_i) & \quad \text{if } y_i = 1\\ - log\ (1- h_{\theta}(x_i)) & \quad \text{if } y_i = 0 \end{cases} $$
+
 合并形式：
-$$
-L(\theta) = - (y_i log\ h_{\theta}(x_i) + (1-y_i) log(1-h_{\theta}(x_i)))
-$$
+
+$$ L(\theta) = - (y_i log\ h_{\theta}(x_i) + (1-y_i) log(1-h_{\theta}(x_i))) $$
+
+
 
 > 损失函数为什么是取对数呢？
 >
@@ -51,11 +50,10 @@ $$
 >
 > 2. 符合最大熵模型中的一种极大似然估计的方法
 >
-> $$
-> L(\theta) = \prod h(\theta^Tx_i)^{y_i} h(\theta^Tx_i)^{1-y_i}\\
-> \\
-> -log(L(\theta)) = -(y_0*log(h(\theta^Tx_0)) + (1-y_0)*log(h(\theta^Tx_0))+....)
-> $$
+> 
+> $L(\theta) = \prod h(\theta^Tx_i)^{y_i} h(\theta^Tx_i)^{1-y_i}\\$
+> $-log(L(\theta)) = -(y_0*log(h(\theta^Tx_0)) + (1-y_0)*log(h(\theta^Tx_0))+….)$
+> 
 >
 
 ## 2. SVM
@@ -87,12 +85,10 @@ $$
 - $min \frac 1 2 \theta^2$ 这是$\theta$的模的平方
 
 - 模型目标
-  $$
-  \begin{cases}
-  \theta^Tx^{(i)} \ge 1 & \quad \text {if } y^{(i)} = 1 \\
-  \theta^Tx^{(i)} \le -1 & \quad \text {if } y^{(i)} = 0 
-  \end{cases}
-  $$
+
+  $$\begin{cases}\theta^Tx^{(i)} \ge 1 & \quad \text {if } y^{(i)} = 1 \\ \theta^Tx^{(i)} \le -1 & \quad \text {if } y^{(i)} = 0 \end{cases} $$
+
+  ​
 
 - 这里的$\theta^Tx^{(i)}$ 可以看做是$x$向量在$\theta$向量上面的投影与$\theta$的模的乘积，而这里的$\theta$就当作支持向量机里面超平面的法向量（超平面就是将样本安照标签分类的平面）
 

@@ -101,3 +101,18 @@ encrypt:
     enable: true
     default_abstract: 这是篇受保护的文章！
     default_message: 请输入文章密码！
+
+
+# Math
+##
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    src: custom_mathjax_source
+    config:
+      # MathJax config
+  katex:
+    css: custom_css_source
+    js: custom_js_source # not used
+    config:
+      # KaTeX config
