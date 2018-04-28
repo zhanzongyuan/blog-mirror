@@ -32,14 +32,19 @@ description: 逻辑回归和SVM的cost函数设计思想几乎是一致的
 
 为了衡量模型的好坏我们需要提出一个**准则**，即loss模型对样本预测结果的**损失函数**
 
-对某个样本(x_i, y_i)预测结果的效果判断 :
+对某个样本$(x_i, y_i)$预测结果的效果判断 :
 
-$$ \\ L(\theta) = \begin{cases} - log\ h_{\theta}(x_i) & \quad \text{if } y_i = 1\\ - log\ (1- h_{\theta}(x_i)) & \quad \text{if } y_i = 0 \end{cases} $$
+
+$$
+L(\theta) = \begin{cases} - log(h_{\theta}(x_i)) & \quad \text{if } y_i = 1 \\
+-log(1- h_{\theta}(x_i)) & \quad \text{if } y_i = 0 \end{cases}
+$$
 
 合并形式：
 
-$$ L(\theta) = - (y_i log\ h_{\theta}(x_i) + (1-y_i) log(1-h_{\theta}(x_i))) $$
-
+$$
+L(\theta) = - (y_i log(h_{\theta}(x_i)) + (1-y_i) log(1-h_{\theta}(x_i)))
+$$
 
 
 > 损失函数为什么是取对数呢？
@@ -48,13 +53,15 @@ $$ L(\theta) = - (y_i log\ h_{\theta}(x_i) + (1-y_i) log(1-h_{\theta}(x_i))) $$
 >
 > ![loss](logist2SVM/loss.png)
 >
-> 2. 符合最大熵模型中的一种极大似然估计的方法
+> 2. 符合最大熵模型中的一种极大似然估计的方法👇
 >
 > 
-> $L(\theta) = \prod h(\theta^Tx_i)^{y_i} h(\theta^Tx_i)^{1-y_i}\\$
-> $-log(L(\theta)) = -(y_0*log(h(\theta^Tx_0)) + (1-y_0)*log(h(\theta^Tx_0))+….)$
-> 
->
+
+
+$$
+L(\theta) = \prod h(\theta^Tx_i)^{y_i} h(\theta^Tx_i)^{1-y_i} \\
+-log(L(\theta)) = -(y_0*log(h(\theta^Tx_0)) + (1-y_0)*log(h(\theta^Tx_0))+….)
+$$
 
 ## 2. SVM
 
@@ -86,12 +93,38 @@ $$ L(\theta) = - (y_i log\ h_{\theta}(x_i) + (1-y_i) log(1-h_{\theta}(x_i))) $$
 
 - 模型目标
 
-  $$\begin{cases}\theta^Tx^{(i)} \ge 1 & \quad \text {if } y^{(i)} = 1 \\ \theta^Tx^{(i)} \le -1 & \quad \text {if } y^{(i)} = 0 \end{cases} $$
+  $$
+  \begin{cases}\theta^Tx^{(i)} \ge 1 & \quad \text {if } y^{(i)} = 1 \\
+  \theta^Tx^{(i)} \le -1 & \quad \text {if } y^{(i)} = 0 \end{cases}
+  $$
 
-  ​
+
+
+
+
+
+
 
 - 这里的$\theta^Tx^{(i)}$ 可以看做是$x$向量在$\theta$向量上面的投影与$\theta$的模的乘积，而这里的$\theta$就当作支持向量机里面超平面的法向量（超平面就是将样本安照标签分类的平面）
+- 模型解释：模型是一个超平面$\theta$ ，对于在这个超平面两侧的平面$\theta^Tx = 1, \ \theta^Tx = -1$，将数据分类到这两个平面两侧，所以要满足:
 
-- 其他特点：假设$x$在$\theta$上面的投影是$p$，则$\theta^Tx^{(i)} = ||\theta||p$，则这个投影$p$可以视作到超平面的距离，所以说为了使得样本里超平面最小距离最大（$max(min(p_i))$），所以式子中的$||\theta||$要足够的小，越小则这个距离越大，反之则距离越小（不符合支持向量机要求的margin尽量大的要求）。所以要加入$min \frac 1 2 \theta^2$ ，限制$\theta$的值尽可能小（也属于正则项），如果没有这个正则项，可能会得到margin比较小的但又能分类的模型（margin小的模型的泛化能力不好）。
+  - $$
+    \begin{cases}\theta^Tx^{(i)} \ge 1 & \quad \text {if } y^{(i)} = 1 \\
+    \theta^Tx^{(i)} \le -1 & \quad \text {if } y^{(i)} = 0 \end{cases}
+    $$
+
+  - 而要求两个平面之间的距离尽量大，这两个平面之间的距离（margin）就是$\frac 2 {|\theta|}$ ，所以最大化$\frac 2 {|\theta|} $，可以转换为最小化$\frac 1 2 \theta^2$ ，即$min \frac 1 2 \theta^2$ 
+
 
 - 通过上面的分析，我们可以看到SVM的几何含义就是：找出一个超平面使得将样本点按照标签分类，同时使得离超平面最近的样本点的距离最远（margin足够大）。
+
+
+
+### 2.3 Insparable Data - Hinge Loss
+
+> 对于部分线性不可分的样本点，如何处理？
+>
+> ：容许一定的错误，加入错误惩罚机制，使得尽量分开数据点
+
+
+

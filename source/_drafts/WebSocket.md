@@ -7,7 +7,7 @@ tags:
 	- HTTP
 	- Socket.IO
 categories:
-	- 计算机视觉
+	- 计算机科学
 description: WebSocket是一种全双工的应用层协议
 ---
 

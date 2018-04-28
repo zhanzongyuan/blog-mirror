@@ -80,7 +80,7 @@ hough空间的直线交点：理解成image空间中分别过两个点的所有�
 
 解决：hough space用极坐标参数，在image space用极坐标表示一条直线
 
-极坐标系直线方程：$r = a*cos\theta + b* sin\theta$，表示过极坐标点$(r, \theta)$ ，且与极坐标点与原点的连线垂直的直线，则$(a, b)$可以当做hough 空间
+$极坐标系直线方程：r = a*cos\theta + b* sin\theta，表示过极坐标点(r, \theta) ，且与极坐标点与原点的连线垂直的直线，则(a, b)可以当做hough 空间$
 
 
 

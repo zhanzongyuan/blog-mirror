@@ -1,12 +1,12 @@
 ---
-title: Deep Learning Summary 1
+title: 卷积神经网络入门总结
 date: 2018-03-31 00:10:15
 tags:
   - 深度学习
   - CNN
 categories:
   - 计算机科学
-description: 深度学习实训总结
+description: 卷积神经网络入门总结
 mathjax: true
 ---
 
@@ -136,7 +136,7 @@ AlexNet中提出，效果得到优化
 
 - RoadMap
 
-![omputer Visio](Deep-Learning-Summary-1/Computer Vision.png)
+![Computer Visio](卷积神经网络入门总结/Computer Vision.png)
 
 
 

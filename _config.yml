@@ -106,7 +106,7 @@ encrypt:
 # Math
 ##
 math:
-  engine: 'mathjax' # or 'katex'
+  engine: 'mathjax' # 'katex' 
   mathjax:
     src: custom_mathjax_source
     config:
